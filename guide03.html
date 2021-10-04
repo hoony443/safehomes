@@ -7,20 +7,71 @@
 	<link rel="canonical" href="url넣기" />
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/default.css">
-	<link rel="stylesheet" href="css/jquery.bxslider.css">
 </head>
 <body>
 
 <div id="wrap">
 
-	<div class="comment">
-		집이 필요한데,</br>
-		무엇부터 해야할지 모르겠어요.
+	<div class="back">
+		<a href="#" class="">뒤로가기</a>
 	</div>
-	
+
 	<div class="content">
-		<div class="guide_prev">
-			
+		<div class="guide03">
+			<div class="tab_menu">
+				<ul class="list">
+					<li class="is_on">
+						<a href="#tab1" class="btn">계약 전</a>
+						<div id="tab1" class="cont">
+							<div class="comment">
+								집이 필요한데,</br>
+								무엇부터 해야할지 모르겠어요.
+							</div>
+							<ul>
+								<li>
+									<input type="checkbox" id="step01" name="step01" class="ty01" />
+									<label for="step01" class="ty01"><span></span><div>1-1. 출/퇴근 장소 설정</div></label>
+								</li>
+								<li>
+									<input type="checkbox" id="step01" name="step01" class="ty01" />
+									<label for="step01" class="ty01"><span></span><div>1-2. 방 개수 설정</div></label>
+								</li>
+								<li>
+									<input type="checkbox" id="step01" name="step01" class="ty01" />
+									<label for="step01" class="ty01"><span></span><div>1-3. 화장실 개수 설정</div></label>
+								</li>
+								<li>
+									<input type="checkbox" id="step01" name="step01" class="ty01" />
+									<label for="step01" class="ty01"><span></span><div>1-4. 자금 범위 설정</div></label>
+								</li>
+								<li>
+									<input type="checkbox" id="step01" name="step01" class="ty01" />
+									<label for="step01" class="ty01"><span></span><div>1-5. 주택 유형 설정</div></label>
+								</li>
+								<li>
+									<input type="checkbox" id="step01" name="step01" class="ty01" />
+									<label for="step01" class="ty01"><span></span><div>1-6. 계약 유형 설정</div></label>
+								</li>
+								<li>
+									<input type="checkbox" id="step01" name="step01" class="ty01" />
+									<label for="step01" class="ty01"><span></span><div>1-7. 요약 내용 리포트</div></label>
+								</li>
+							</ul>
+							<div class="btn_box">
+								<button type="button" class="on off" value="확인">현재 단계 진행하기</button>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="#tab2" class="btn">계약 단계</a>
+						<div id="tab2" class="cont">Tab Content2</div>
+					</li>
+					<li>
+						<a href="#tab3" class="btn">계약 후</a>
+						<div id="tab3" class="cont">Tab Content3</div>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	
@@ -28,6 +79,21 @@
 
 
 </body>
+
+<script>
+  const tabList = document.querySelectorAll('.tab_menu .list > li');
+  
+  for(var i = 0; i < tabList.length; i++){
+    tabList[i].querySelector('.btn').addEventListener('click', function(e){
+      e.preventDefault();
+      for(var j = 0; j < tabList.length; j++){
+        tabList[j].classList.remove('is_on');
+      }
+      this.parentNode.classList.add('is_on');
+    });
+  }
+</script>
+
 </html>
 
 
